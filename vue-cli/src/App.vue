@@ -1,14 +1,15 @@
 <template>
-  <div id="app">
+  <div id="app" class="unda-kafka">
 
     <app-header></app-header>
 
-    <h1>Welcome Kafka</h1>
+    <div class="unda-kafka-logo">
+      <img src="./assets/andy-warhol-franz-kafka-logo.png" alt="Franz Kafka">
+    </div>
+    <transition name="slide" mode="out-in">
+      <router-view></router-view>
+    </transition>
 
-    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.
-    </p>
-
-    <router-view></router-view>
   </div>
 </template>
 
@@ -23,5 +24,72 @@ export default {
 </script>
 
 <style lang="scss">
+/*COLOR SCHEME*/
+$primary: #B8E1DE !default;
+$secondary: #1F2625 !default;
+$tertiary: #151A19 !default;
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: $primary;
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  margin: 0 auto;
+  width: 100%;
+
+  .unda-kafka-logo {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+      img {
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+
+      }
+  }
+
+/*ANIMATION TRANSITION*/
+  .slide-leave-active {
+       transition: opacity .7s ease;
+       opacity: 0;
+       animation: slide-out .7s ease-out forwards;
+   }
+
+   .slide-leave {
+       opacity: 1;
+       transform: translateX(0);
+   }
+
+   .slide-enter-active {
+       animation: slide-in .7s ease-out forwards;
+   }
+
+   @keyframes slide-out {
+       0% {
+           transform: translateY(0);
+       }
+       100% {
+           transform: translateY(-30px);
+       }
+   }
+
+   @keyframes slide-in {
+       0% {
+           transform: translateY(-30px);
+       }
+       100% {
+           transform: translateY(0);
+       }
+   }
+}
 </style>
