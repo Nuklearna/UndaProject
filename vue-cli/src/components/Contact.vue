@@ -3,10 +3,19 @@
 
     <h2 class="unda-kafka-form__heading">{{ msgContact }}</h2>
 
-    <form class="unda-kafka-form__form" method="post">
+    <!-- <p class="unda-kafka-form__error" v-if="error">{{ error }}</p>
+
+    <div class="unda-kafka-form__form" >
+      <input type="email" name="email" placeholder="Enter your email" v-model="email">
+      <textarea name="text" rows="4" minlenght="30" placeholder="Enter your message" v-model="text"></textarea>
+      <button v-on:click="createContact">Send a message</button>
+    </div> -->
+    <p class="unda-kafka-form__error" v-if="error">{{ error }}</p>
+
+    <form class="unda-kafka-form__form" >
       <input type="email" name="email" placeholder="Enter your email">
-      <textarea name="text" rows="4" minlenght="30" placeholder="Enter your message"></textarea>
-      <button type="button" name="submit">Send a message</button>
+      <textarea name="text" rows="4" maxlength="300" minlength="30" placeholder="Enter your message"></textarea>
+      <button >Send a message</button>
     </form>
 
 
@@ -14,14 +23,32 @@
 </template>
 
 <script>
-
+// import ContactService from '../contactService.js'
 
 export default {
+  name: 'Contact',
   data () {
     return {
-      msgContact: 'Contact us'
+      msgContact: 'Contact us',
+      contacts: [],
+      error: '',
+      email: '',
+      text: ''
     }
-  }
+  },
+  // async created() {
+  //   try {
+  //     this.contacts = await ContactService.getContact();
+  //   } catch (err) {
+  //     this.error = err.message;
+  //   }
+  // },
+  // methods: {
+  //   async createContact() {
+  //     await ContactService.insertContact(this.text);
+  //     this.contacts = await ContactService.getContact();
+  //   }
+  // }
 }
 </script>
 <style lang="scss">
