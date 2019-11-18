@@ -24,10 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-/*COLOR SCHEME*/
-$primary: #B8E1DE !default;
-$secondary: #1F2625 !default;
-$tertiary: #151A19 !default;
+@import "./scss/variables";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
@@ -47,13 +44,24 @@ body {
   width: 100%;
 
   .unda-kafka-logo {
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+
+    @media screen and (max-width: $break-small){
+      margin: 2rem auto;
+    }
+
       img {
         width: 15rem;
         height: 15rem;
         object-fit: cover;
+
+        @media screen and (max-width: $break-small) {
+          width: 25rem;
+          height: 25rem;
+        }
+
 
       }
   }

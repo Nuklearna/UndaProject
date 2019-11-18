@@ -13,18 +13,12 @@
 </template>
 
 <script>
-
-
 export default {
-
 }
 </script>
 
-<style lang="scss">
-/*COLOR SCHEME*/
-$primary: #B8E1DE !default;
-$secondary: #1F2625 !default;
-$tertiary: #151A19 !default;
+<style lang="scss" scoped>
+@import "../scss/variables";
 
 .unda-kafka {
   &__heading {

@@ -7,25 +7,16 @@
 
   </nav>
 </template>
-<style lang="scss">
-/*COLOR SCHEME*/
-$primary: #B8E1DE !default;
-$secondary: #1F2625 !default;
-$tertiary: #151A19 !default;
+<style lang="scss" scoped>
+@import "../scss/variables";
 
 .unda-header {
   &__navbar {
     position: relative;
     display: flex;
     padding: .5rem 1rem;
-
-    @media (min-width: 992px) {
-      flex-flow: row nowrap;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-    }
-
   }
+
   &__nav {
     display: flex;
     -ms-flex-direction: row;
@@ -42,9 +33,14 @@ $tertiary: #151A19 !default;
       text-decoration: none;
       font-weight: 600;
 
+      // @media screen and (min-width: $mobile-360) {
+      //   font-size: 2rem;
+      // }
+
       &:hover {
         text-decoration: none;
-        color: $secondary;
+        color: #0073B6;
+        transition: .5s ease-out;
       }
     }
 
