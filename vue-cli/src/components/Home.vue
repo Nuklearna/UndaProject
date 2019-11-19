@@ -24,6 +24,11 @@ export default {
   &__heading {
     color: $tertiary;
     text-align: center;
+    font-size: 3rem;
+
+    @media (max-width: $break-large) {
+      font-size: 2rem;
+    }
   }
 
   &__text {
@@ -31,6 +36,11 @@ export default {
     text-align: justify;
     width: 65%;
     margin: 0 auto;
+    font-size: .9rem;
+
+    @media (max-width: $break-large) {
+      font-size: 1rem;
+    }
   }
 
   .float-right {

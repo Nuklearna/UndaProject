@@ -48,16 +48,15 @@ body {
       text-align: center;
       width: 100%;
 
-    @media screen and (max-width: $break-small){
+    @media (max-width: $break-large) {
       margin: 2rem auto;
     }
-
       img {
         width: 15rem;
         height: 15rem;
         object-fit: cover;
 
-        @media screen and (max-width: $break-small) {
+        @media screen and (max-width: $break-large) {
           width: 25rem;
           height: 25rem;
         }

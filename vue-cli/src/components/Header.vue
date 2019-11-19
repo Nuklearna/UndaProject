@@ -32,10 +32,11 @@
       color: $tertiary;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1.4rem;
 
-      // @media screen and (min-width: $mobile-360) {
-      //   font-size: 2rem;
-      // }
+      @media (max-width: $break-large) {
+        font-size: 2rem;
+      }
 
       &:hover {
         text-decoration: none;

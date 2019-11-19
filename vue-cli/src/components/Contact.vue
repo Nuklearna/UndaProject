@@ -58,9 +58,9 @@ export default {
     width: 50%;
     margin: 0 auto;
 
-    // @media screen and (max-width: $break-small) {
-    //   width: 80%;
-    // }
+    @media screen and (max-width: $break-large) {
+      width: 80%;
+    }
 
     &__heading {
       text-align: center;
@@ -80,10 +80,10 @@ export default {
         border-right: 2px solid;
         transition: border-color .5s ease-out;
 
-        // @media screen and (max-width: $break-small){
-        //   padding: 1.5rem;
-        //   font-size: 2rem;
-        // }
+        @media screen and (max-width: $break-large){
+          padding: 1.5rem;
+          font-size: 2rem;
+        }
       }
 
       input:required, textarea:required {
@@ -107,10 +107,10 @@ export default {
         font-size: 16px;
         cursor: pointer;
 
-        // @media screen and (max-width: $break-small) {
-        //   padding: 1.5rem;
-        //   font-size: 2rem;
-        // }
+        @media screen and (max-width: $break-large) {
+          padding: 1.5rem;
+          font-size: 2rem;
+        }
 
         &:hover {
           color: $primary;

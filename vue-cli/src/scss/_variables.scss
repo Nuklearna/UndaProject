@@ -1,0 +1,9 @@
+/*COLOR SCHEME*/
+$primary: #B8E1DE !default;
+$secondary: #1F2625 !default;
+$tertiary: #151A19 !default;
+
+/*REMOVE DEFAULT OUTLINE ON INPUT, TEXTAREA, BUTTON*/
+textarea, input, button { outline: none; }
+
+$break-large: 1200px;
